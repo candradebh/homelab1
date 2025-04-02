@@ -1,5 +1,5 @@
 {
-  description = "Homelab Development Environment";
+  description = "Ambiente de Desenvolvimento Homelab";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
@@ -13,7 +13,6 @@
       in
       {
         devShells.default = pkgs.mkShell {
-          # Lista de pacotes necessários para o ambiente de desenvolvimento
           packages = with pkgs; [
             ansible
             ansible-lint
@@ -53,7 +52,6 @@
             ]))
           ];
 
-          # Comandos executados ao entrar no ambiente de desenvolvimento
           shellHook = ''
             echo "Bem-vindo ao ambiente de desenvolvimento do Homelab!"
             # Adicione aqui quaisquer comandos adicionais que deseja executar ao iniciar o shell
