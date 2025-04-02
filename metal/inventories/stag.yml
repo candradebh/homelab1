@@ -4,4 +4,9 @@ metal:
       hosts:
         proxmox0: {ansible_host: 192.168.1.25, mac: '00:e0:24:24:92:5b', disk: sda, network_interface: enp4s0}
     workers:
-      hosts: {}
+      hosts: 
+        pvekubenode1: {ansible_host: 192.168.1.10, mac: 'BC:24:11:1C:E3:C0', disk: sda, network_interface: ens18}
+        pvekubenode2: {ansible_host: 192.168.1.12, mac: 'BC:24:11:F7:CC:B8', disk: sda, network_interface: ens18}
+        pvekubenode3: {ansible_host: 192.168.1.11, mac: 'BC:24:11:EB:C2:7D', disk: sda, network_interface: ens18}
+        pvekubenode4: {ansible_host: 192.168.1.13, mac: 'BC:24:11:2D:0E:C9', disk: sda, network_interface: ens18}
+      
