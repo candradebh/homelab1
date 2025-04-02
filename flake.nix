@@ -13,7 +13,7 @@
       in
       with pkgs;
       {
-        devShells.default = mkShell {
+        devShells.${system}.default = mkShell {
           packages = [
             ansible
             ansible-lint
