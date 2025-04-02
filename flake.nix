@@ -11,40 +11,39 @@
       let
         pkgs = import nixpkgs { inherit system; };
       in
-      with pkgs;
       {
-        devShells.default = mkShell {
+        devShells.${system}.default = pkgs.mkShell {
           packages = [
-            ansible
-            ansible-lint
-            bmake
-            diffutils
-            docker
-            docker-compose
-            dyff
-            git
-            go
-            gotestsum
-            iproute2
-            jq
-            k9s
-            kanidm
-            kube3d
-            kubectl
-            kubernetes-helm
-            kustomize
-            libisoburn
-            neovim
-            openssh
-            opentofu # Drop-in replacement for Terraform
-            p7zip
-            pre-commit
-            qrencode
-            shellcheck
-            wireguard-tools
-            yamllint
+            pkgs.ansible
+            pkgs.ansible-lint
+            pkgs.bmake
+            pkgs.diffutils
+            pkgs.docker
+            pkgs.docker-compose
+            pkgs.dyff
+            pkgs.git
+            pkgs.go
+            pkgs.gotestsum
+            pkgs.iproute2
+            pkgs.jq
+            pkgs.k9s
+            pkgs.kanidm
+            pkgs.kube3d
+            pkgs.kubectl
+            pkgs.kubernetes-helm
+            pkgs.kustomize
+            pkgs.libisoburn
+            pkgs.neovim
+            pkgs.openssh
+            pkgs.opentofu
+            pkgs.p7zip
+            pkgs.pre-commit
+            pkgs.qrencode
+            pkgs.shellcheck
+            pkgs.wireguard-tools
+            pkgs.yamllint
 
-            (python3.withPackages (p: with p; [
+            (pkgs.python3.withPackages (p: with p; [
               jinja2
               kubernetes
               mkdocs-material
