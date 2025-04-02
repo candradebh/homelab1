@@ -1,4 +1,5 @@
 - name: Adjust kernel parameters
+  become: true
   ansible.posix.sysctl:
     name: "{{ item.name }}"
     value: "{{ item.value }}"
