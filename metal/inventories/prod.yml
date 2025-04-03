@@ -10,30 +10,22 @@ metal:
   children:
     masters:
       hosts:
-        pvekubecontrolane:
-          ansible_host: 192.168.1.8
-          mac: 'BC:24:11:4E:DC:39'
-          disk: sda
-          network_interface: net0
         pvekubenode1:
           ansible_host: 192.168.1.10
           mac: 'BC:24:11:1C:E3:C0'
           disk: sda
-          network_interface: net0
-        pvekubenode3:
-          ansible_host: 192.168.1.11
-          mac: 'BC:24:11:EB:C2:7D'
-          disk: sda
-          network_interface: net0
+          network_interface: ens18
         pvekubenode2:
           ansible_host: 192.168.1.12
           mac: 'BC:24:11:F7:CC:B8'
           disk: sda
-          network_interface: net0
-    workers:
-      hosts:
-        pvekubenode4:
-          ansible_host: 192.168.1.13
-          mac: 'BC:24:11:2D:0E:C9'
+          network_interface: ens18
+        pvekubenode3:
+          ansible_host: 192.168.1.11
+          mac: 'BC:24:11:EB:C2:7D'
           disk: sda
-          network_interface: net0
+          network_interface: ens18
+      
+    workers:
+      hosts: {}
+        
