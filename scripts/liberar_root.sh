@@ -1,3 +1,12 @@
+#!/bin/bash
+
+# Lista dos hosts
+HOSTS=("192.168.1.8" "192.168.1.10" "192.168.1.11" "192.168.1.12" "192.168.1.13")
+
+# Caminho da chave pública do usuário carlos
+PUBKEY_PATH="/home/carlos/.ssh/id_ed25519.pub"
+
+
 read -s -p "Digite a senha do usuário carlos: " SENHA
 echo
 
