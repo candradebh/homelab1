@@ -6,7 +6,7 @@ HOSTS=("192.168.1.8" "192.168.1.10" "192.168.1.11" "192.168.1.12")
 # Caminho da chave pública do usuário carlos
 PUBKEY_PATH="/home/carlos/.ssh/id_ed25519.pub"
 
-# reseta se vc trocar o so da vm e pegar mesmo ip
+# reseta se vc trocar o so da vm e pegar mesmo ip.
 # for host in "${HOSTS[@]}"; do ssh-keygen -R "$host"; done
 
 read -s -p "Digite a senha do usuário carlos: " SENHA
