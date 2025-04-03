@@ -10,6 +10,11 @@ metal:
   children:
     masters:
       hosts:
+        pvekubecontrolpane:
+            ansible_host: 192.168.1.8
+            mac: 'bc:24:11:4e:dc:39'
+            disk: sda
+            network_interface: ens18
         pvekubenode1:
           ansible_host: 192.168.1.10
           mac: 'BC:24:11:1C:E3:C0'
