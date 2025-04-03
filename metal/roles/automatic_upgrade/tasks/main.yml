@@ -1,8 +1,8 @@
 - name: Install packages for automatic upgrade Ubuntu/Debian 
-  ansible.builtin.dnf:
+  ansible.builtin.apt:
     name:
-      - dnf-automatic
-      - dnf-utils
+      - unattended-upgrades
+    state: present
   when: ansible_facts.pkg_mgr == "apt"
 
 - name: Install packages for automatic upgrade Fedora/CentOS/RHEL 
@@ -10,16 +10,20 @@
     name:
       - dnf-automatic
       - dnf-utils
+    state: present
+    use_backend: dnf4
   when: ansible_facts.pkg_mgr == "dnf"
-  
+
 - name: Copy automatic upgrade config file
   ansible.builtin.copy:
     src: automatic.conf
     dest: /etc/dnf/automatic.conf
     mode: 0644
+  when: ansible_facts.pkg_mgr == "dnf"
 
 - name: Enable automatic upgrade service
   ansible.builtin.systemd:
     name: dnf-automatic.timer
     state: started
     enabled: true
+  when: ansible_facts.pkg_mgr == "dnf"
